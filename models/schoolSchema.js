@@ -1,0 +1,39 @@
+const mongoose = require("mongoose")
+
+const schoolScheman = new mongoose.Schema({
+    name:{
+        type:String,
+        required: true
+    },
+    level:{
+        type:String,
+        required: true
+    },
+    category:{
+        type:String,
+        required: true
+    },
+    numOfStudents:{
+        type:Number,
+        required: true
+    },
+    location:{
+        type:String,
+        required: true
+    },
+    address:{
+        gps:String,
+        box: String
+    },
+    contact:{
+        phone:String,
+        fax: String,
+        email:String
+    }
+},{
+    timestamps:true
+}
+)
+
+const School = mongoose.model("School", schoolScheman)
+module.exports = School;
